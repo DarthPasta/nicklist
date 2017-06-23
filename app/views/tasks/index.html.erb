@@ -1,5 +1,6 @@
 <h1>Welcome to Nick's List</h1>
 
+<!-- form to create new task -->
 <%= form_for @task, action: "post", controller: "tasks" do |t| %>
 	<%= t.label :description %>
 	<%= t.text_field :description %>
@@ -7,8 +8,13 @@
 	<%= t.submit "Add task" %>
 <% end %>
 
+
 <h2>List of Tasks</h2>
+
+<!-- display the list of tasks -->
 <% @tasks.each do |task| %>
-	<%= task.description %> 
-	<%= task.created_at.to_date %>
+<ul>
+	<li><%= task.description %></li>
+	<li><%= task.created_at.to_date %></li>
+</ul>
 <% end %> 

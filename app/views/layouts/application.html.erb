@@ -9,6 +9,13 @@
   </head>
 
   <body>
+  	<div id="flash-messages">
+	  <% flash.each do |key, msg| %>
+	  	<%= content_tag :div, msg, :id => key %>
+	  <% end %>
+	</div>
+
+
     <%= yield %>
   </body>
 </html>
