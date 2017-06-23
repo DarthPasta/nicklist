@@ -22,6 +22,26 @@ h6 {
     font-weight: 700;
 }
 
+a.navbar-brand {
+    color: black;
+}
+
+ul.navbar-nav.ml-auto {
+    float: right;
+    padding-top: 12px;
+    list-style: none;
+}
+
+a.nav-link {
+    margin: 0px 20px;
+    list-style: none;
+}
+
+nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
+    margin: 0;
+    background: floralwhite;
+}
+
 .intro-header {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -106,6 +126,11 @@ h6 {
     color: #f8f8f8;
     background: image-url('banner-bg.jpg') no-repeat center center;
     background-size: cover;
+}
+
+img.img-fluid {
+    height: 300px;
+    margin-left: 90px;
 }
 
 .banner h2 {
