@@ -30,7 +30,7 @@
 
     <!-- Header -->
     <header class="intro-header" ontouchstart="this.classList.toggle('hover');">
-    	<div class="flipper">
+    	<% if signed_in? %><div class="flipper"><% end %>
 
     	<!-- Front view -->
     		<div class="front-view">
@@ -38,7 +38,7 @@
             	<div class="intro-message">
 
 	            <% if signed_in? %>
-	                <h1><%= current_user.email List %></h1>
+	                <h1><%= current_user.email %> List</h1>
 	            <% else %>
 	            	<h1>Please Sign In to Proceed</h1>
 	            <% end %>
@@ -61,13 +61,16 @@
 	        	</div>
         	</div>
 
+        	<% if signed_in? %>
 	        <div class="back-view">
 	        <div class="new-task-form">	
 	        <h1>Welcome to Nick's List</h1>
 
+	      
 				<!-- form to create new task -->
-				<%= form_for @task, action: "post", controller: "tasks" do |t| %>
-					<%= t.text_field :description, placeholder: "Add a task" %>
+				<%= form_for @task, html: {autocomplete: "off" }, action: "post", controller: "tasks" do |t| %>
+
+					<%= t.text_field :description, placeholder: "Add a task.." %>
 
 					<%= t.submit "Add task" %>
 				<% end %>
@@ -76,6 +79,7 @@
 				<div class="task-list">
 				<!-- display the list of tasks -->
 				<% @tasks.each do |task| %>
+
 				<ul class="task-items">
 					<li><%= task.description %></li>
 					<li>Created at: <%= task.created_at.to_date %></li>
@@ -85,6 +89,7 @@
 			</div>
 	        </div>
         </div>
+        <% end %>
 
     </header>
 

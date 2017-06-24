@@ -3,7 +3,7 @@ before_action :authenticate_user!, :only => [:create]
 
 	def index 
 		@task = Task.new
-		@tasks = Task.all.order(created_at: :desc)
+		@tasks = current_user.tasks.order(created_at: :desc)
 	end
 
 	def new 
@@ -12,10 +12,10 @@ before_action :authenticate_user!, :only => [:create]
 	def create 
 
 		@task = Task.new
-		@task.description = params[:description]
+		@task.description = params[:task][:description]
 		@task.user_id = current_user.id 
 		@task.save
-
+		debugger
 		if @task.save
 			flash[:success] = "Successfully added a task"
 			redirect_to root_path
