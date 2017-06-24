@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+before_action :authenticate_user!, :only => [:create]
+
 	def index 
 		@task = Task.new
 		@tasks = Task.all.order(created_at: :desc)
@@ -8,8 +10,13 @@ class TasksController < ApplicationController
 	end 
 
 	def create 
-		@task = Task.create(task_params)
-		if @task 
+
+		@task = Task.new
+		@task.description = params[:description]
+		@task.user_id = current_user.id 
+		@task.save
+
+		if @task.save
 			flash[:success] = "Successfully added a task"
 			redirect_to root_path
 
@@ -24,6 +31,6 @@ class TasksController < ApplicationController
 
 	private 
 	def task_params
-		params.require(:task).permit(:description)
+		params.require(:task).permit(:description, :user_id)
 	end
 end

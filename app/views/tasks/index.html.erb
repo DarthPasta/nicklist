@@ -29,15 +29,19 @@
             <a class="navbar-brand" href="#">Start Bootstrap</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
+                	
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                    	<%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <%= link_to "About", root_path, class: "nav-link" %>
                     </li>
+                    
                 </ul>
             </div>
         </div>
@@ -47,8 +51,15 @@
     <header class="intro-header">
         <div class="container">
             <div class="intro-message">
-                <h1>Landing Page</h1>
-                <h3>A Template by Start Bootstrap</h3>
+
+            <% if signed_in? %>
+                <h1><%= current_user.email List %></h1>
+            <% else %>
+            	<h1>Please Sign In to Proceed</h1>
+            <% end %>
+
+
+                <h3>Manage your tasks with no effort</h3>
                 <hr class="intro-divider">
                 <ul class="list-inline intro-social-buttons">
                     <li class="list-inline-item">
