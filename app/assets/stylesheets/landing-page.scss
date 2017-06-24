@@ -47,8 +47,7 @@ nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: image-url('intro-bg.jpg') no-repeat center center;
-    background-size: cover;
+    
 }
 
 .intro-message {
@@ -180,5 +179,4 @@ p.copyright {
     margin: 15px 0 0;
 }
 
- @import "bootstrap-sprockets";
-@import "bootstrap";
+

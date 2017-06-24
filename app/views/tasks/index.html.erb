@@ -1,23 +1,4 @@
-<h1>Welcome to Nick's List</h1>
 
-<!-- form to create new task -->
-<%= form_for @task, action: "post", controller: "tasks" do |t| %>
-	<%= t.label :description %>
-	<%= t.text_field :description %>
-
-	<%= t.submit "Add task" %>
-<% end %>
-
-
-<h2>List of Tasks</h2>
-
-<!-- display the list of tasks -->
-<% @tasks.each do |task| %>
-<ul>
-	<li><%= task.description %></li>
-	<li><%= task.created_at.to_date %></li>
-</ul>
-<% end %> 
 
 
     <!-- Navigation -->
@@ -48,32 +29,65 @@
     </nav>
 
     <!-- Header -->
-    <header class="intro-header">
-        <div class="container">
-            <div class="intro-message">
+    <header class="intro-header" ontouchstart="this.classList.toggle('hover');">
+    	<div class="flipper">
 
-            <% if signed_in? %>
-                <h1><%= current_user.email List %></h1>
-            <% else %>
-            	<h1>Please Sign In to Proceed</h1>
-            <% end %>
+    	<!-- Front view -->
+    		<div class="front-view">
+        		<div class="container">
+            	<div class="intro-message">
+
+	            <% if signed_in? %>
+	                <h1><%= current_user.email List %></h1>
+	            <% else %>
+	            	<h1>Please Sign In to Proceed</h1>
+	            <% end %>
 
 
-                <h3>Manage your tasks with no effort</h3>
-                <hr class="intro-divider">
-                <ul class="list-inline intro-social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                    </li>
-                </ul>
-            </div>
+	                <h3>Manage your tasks with no effort</h3>
+	                <hr class="intro-divider">
+	                <ul class="list-inline intro-social-buttons">
+	                    <li class="list-inline-item">
+	                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                        <a href="#" class="btn btn-secondary btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+	                    </li>
+	                </ul>
+	        	</div>
+	        	</div>
+        	</div>
+
+	        <div class="back-view">
+	        <div class="new-task-form">	
+	        <h1>Welcome to Nick's List</h1>
+
+				<!-- form to create new task -->
+				<%= form_for @task, action: "post", controller: "tasks" do |t| %>
+					<%= t.label :description %>
+					<%= t.text_field :description %>
+
+					<%= t.submit "Add task" %>
+				<% end %>
+			</div>
+
+			<div class="task-list">
+				<h2>List of Tasks</h2>
+
+				<!-- display the list of tasks -->
+				<% @tasks.each do |task| %>
+				<ul>
+					<li><%= task.description %></li>
+					<li><%= task.created_at.to_date %></li>
+				</ul>
+				<% end %> 
+			</div>
+	        </div>
         </div>
+
     </header>
 
     <!-- Page Content -->
