@@ -3,7 +3,7 @@ before_action :authenticate_user!, :only => [:create]
 
 	def index 
 		@task = Task.new
-		@tasks = current_user.tasks.order(created_at: :desc)
+		@tasks = current_user.tasks.order(created_at: :desc) if current_user
 	end
 
 	def new 
