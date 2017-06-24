@@ -67,23 +67,21 @@
 
 				<!-- form to create new task -->
 				<%= form_for @task, action: "post", controller: "tasks" do |t| %>
-					<%= t.label :description %>
-					<%= t.text_field :description %>
+					<%= t.text_field :description, placeholder: "Add a task" %>
 
 					<%= t.submit "Add task" %>
 				<% end %>
 			</div>
 
-			<div class="task-list">
-				<h2>List of Tasks</h2>
-
+				<div class="task-list">
 				<!-- display the list of tasks -->
 				<% @tasks.each do |task| %>
-				<ul>
+				<ul class="task-items">
 					<li><%= task.description %></li>
-					<li><%= task.created_at.to_date %></li>
+					<li>Created at: <%= task.created_at.to_date %></li>
 				</ul>
 				<% end %> 
+
 			</div>
 	        </div>
         </div>
