@@ -15,7 +15,6 @@ before_action :authenticate_user!, :only => [:create]
 		@task.description = params[:task][:description]
 		@task.user_id = current_user.id 
 		@task.save
-		debugger
 		if @task.save
 			flash[:success] = "Successfully added a task"
 			redirect_to root_path

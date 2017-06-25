@@ -33,6 +33,16 @@ header.intro-header {
     position: relative;
 }
 
+div.avatar-container {
+	padding: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
 .back-view {
 	transform: rotateY(180deg);
 	color: black;
