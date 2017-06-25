@@ -41,12 +41,20 @@ div.avatar-container {
     height: 200px;
     margin: 0 auto;
     margin-bottom: 50px;
+
+}
+
+img.avatar-container {
+	border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .back-view {
 	transform: rotateY(180deg);
 	color: black;
-	background: image-url('office.jpg') no-repeat center center;
+	background: image-url('office.jpg') no-repeat;
 	background-size: 100%;
 	width: 100%;
 	height: 100%;
