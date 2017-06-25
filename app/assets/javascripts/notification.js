@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$('div#success').fadeOut("slow", function() {
 			$(this).remove();
 		}) 
-	}, 4500);
+	}, 3500);
 });
 
 $(document).ready(function(){
@@ -11,5 +11,13 @@ $(document).ready(function(){
 		$('div#danger').fadeOut("slow", function() {
 			$(this).remove();
 		}) 
-	}, 4500);
+	}, 3500);
+});
+
+$(document).ready(function(){
+	setTimeout(function(){
+		$('div#notice').fadeOut("slow", function() {
+			$(this).remove();
+		}) 
+	}, 3500);
 });
