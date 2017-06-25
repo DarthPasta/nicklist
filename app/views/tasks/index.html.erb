@@ -1,7 +1,4 @@
-
-
-
-    <!-- Navigation -->
+ <!-- Navigation -->
     <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -82,7 +79,7 @@
         	<% if signed_in? %>
 	        <div class="back-view">
 	        <div class="new-task-form">	
-	        <h1>Welcome to Nick's List</h1>
+	        <h1 class="task-head">Welcome to Nick's List</h1>
 
 	      
 				<!-- form to create new task -->
@@ -90,8 +87,11 @@
 
 					<%= t.text_field :description, placeholder: "Add a task.." %>
 
-					<%= t.submit "Add task" %>
+                    <%= button_tag(type: "submit", class: "btn btn-success") do %><i class="glyphicon glyphicon-plus"></i>
+                    <% end %>
+
 				<% end %>
+
 			</div>
 
 				<div class="task-list">
@@ -99,7 +99,13 @@
 				<% @tasks.each do |task| %>
 
 				<ul class="task-items">
-					<li><%= link_to 'Delete', delete_task_path(task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %><%= task.description %></li>
+					<li>
+                    <div class="task-option">
+                    <%= link_to 'Delete', delete_task_path(task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
+                    <%= link_to 'Edit', edit_task_path(task.id) %>
+                    </div>
+                    <%= task.description %></li>
+
 					<li>Created at: <%= task.created_at.to_date %></li>
 				</ul>
 				<% end %> 
