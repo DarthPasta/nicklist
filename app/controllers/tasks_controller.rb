@@ -10,7 +10,6 @@ before_action :authenticate_user!, :only => [:create]
 	end 
 
 	def create 
-
 		@task = Task.new
 		@task.description = params[:task][:description]
 		@task.user_id = current_user.id 
@@ -25,7 +24,17 @@ before_action :authenticate_user!, :only => [:create]
 		end
 	end 
 
-	def show 
+	def destroy
+		@task = Task.find(params[:id])
+		@task.destroy
+		debugger
+		if @task.destroy
+			flash[:success] = "Task deleted"
+			redirect_to root_path
+		else
+			flash[:danger] = "Task delete failed"
+			redirect_to root_path
+		end 
 	end
 
 	private 
