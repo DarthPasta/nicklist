@@ -61,8 +61,15 @@ img.avatar-container {
 
 }
 
+div.task-row {
+	display: inline-flex;
+    width: 100%;
+}
+
 ul.task-items {
 	list-style: none;
+    width: 100%;
+    padding-left: 10px;
 }
 
 ul.task-items li:nth-child(1) {

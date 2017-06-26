@@ -99,11 +99,12 @@
 				<!-- display the list of tasks -->
 				<% @tasks.each do |task| %>
 
-				<ul class="task-items">
-					<li>
-
-                    <div class="task-option dropdown">
-                        <span>Hover over me</span>
+                            
+        <div class="task-row">
+                            <div class="task-option dropdown">
+                                <span><button type="button" class="btn btn-primary btn-sml">
+                                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                            </button></span>
 
                             <div class="dropdown-content">
                                 <%= link_to 'Delete', delete_task_path(task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
@@ -112,14 +113,19 @@
 
                     </div>
 
-                    <%= task.description %></li>
+				<ul class="task-items">
+
+                    <li><%= task.description %></li>
 
 					<li>Created at: <%= task.created_at.to_date %></li>
-				</ul>
+				</ul>   
+                </div>  
 				<% end %> 
+
                 </div>
 			</div>
 	        </div>
+        
         </div>
         <% end %>
 
