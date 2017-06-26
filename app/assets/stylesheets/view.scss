@@ -15,6 +15,8 @@ header.intro-header {
 	padding: 0px;
 	height: 100%;
 	width: 100%;
+	display: initial;
+	margin-bottom: 20px;
 }
 
 .flipper {
@@ -188,5 +190,9 @@ div.dropdown-content {
 
 div.task-option.dropdown:hover div.dropdown-content {
 	display: block;
+}
+
+aside.banner {
+	margin-top: 10px;
 }
 
