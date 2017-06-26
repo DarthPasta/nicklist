@@ -1,8 +1,8 @@
 a.nav-link {
-	color: chocolate;
+	color: ghostwhite;
     font-family: serif;
-    border-left: 1px solid lightcoral;
-    border-right: 1px solid lightcoral;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     padding: 1px 10px;
     margin: 0px;
 }
@@ -63,7 +63,7 @@ img.avatar-container {
 .back-view {
 	transform: rotateY(180deg);
 	color: black;
-	background: image-url('office.jpg') no-repeat;
+	background: image-url('fall.jpg') no-repeat;
 	background-size: 100%;
 	width: 100%;
 	height: 100%;
@@ -104,11 +104,12 @@ input#task_description {
     width: 80%;
     font-size: 17px;
     padding: 3px 10px;
+    background: snow;
 
 }
 
 div.task-list-container {
-	background: white;
+    background: snow;
     position: inherit;
     width: 85%;
     margin: 10px 7.5%;

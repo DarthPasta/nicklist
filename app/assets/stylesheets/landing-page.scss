@@ -23,8 +23,8 @@ h6 {
 }
 
 a.navbar-brand {
-    font-family: fantasy;
-    color: brown;
+    font-family: initial;
+    color: ghostwhite;
     font-size: x-large;
 }
 
@@ -47,7 +47,8 @@ a.nav-link {
 
 nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
     margin: 0;
-    background: floralwhite;
+    background: darkslategrey;
+    border-bottom: 3px black solid;
 }
 
 .intro-header {
