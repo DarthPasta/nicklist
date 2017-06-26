@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">Code Review</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                 	
@@ -94,6 +94,7 @@
 
 			</div>
 
+            <div class="task-list-container">
 				<div class="task-list">
 				<!-- display the list of tasks -->
 				<% @tasks.each do |task| %>
@@ -109,7 +110,7 @@
 					<li>Created at: <%= task.created_at.to_date %></li>
 				</ul>
 				<% end %> 
-
+                </div>
 			</div>
 	        </div>
         </div>

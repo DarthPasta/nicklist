@@ -91,6 +91,16 @@ input#task_description {
 
 }
 
+div.task-list-container {
+	background: white;
+    position: inherit;
+    width: 85%;
+    margin: 10px 7.5%;
+    border: grey 0.5px solid;
+    border-radius: 10px;
+    padding: 0px 3px;
+}
+
 .task-list {
 	width: auto;
     margin: 20px 40px;
