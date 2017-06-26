@@ -101,10 +101,17 @@
 
 				<ul class="task-items">
 					<li>
-                    <div class="task-option">
-                    <%= link_to 'Delete', delete_task_path(task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
-                    <%= link_to 'Edit', edit_task_path(task.id) %>
+
+                    <div class="task-option dropdown">
+                        <span>Hover over me</span>
+
+                            <div class="dropdown-content">
+                                <%= link_to 'Delete', delete_task_path(task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
+                                  <%= link_to 'Edit', edit_task_path(task.id) %>
+                            </div>
+
                     </div>
+
                     <%= task.description %></li>
 
 					<li>Created at: <%= task.created_at.to_date %></li>
