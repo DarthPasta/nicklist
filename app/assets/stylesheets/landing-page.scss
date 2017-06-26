@@ -28,6 +28,11 @@ a.navbar-brand {
     font-size: x-large;
 }
 
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 
 ul.navbar-nav.ml-auto {
     float: right;
