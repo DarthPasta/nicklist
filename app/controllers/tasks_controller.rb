@@ -27,7 +27,6 @@ before_action :authenticate_user!, :only => [:create]
 	def destroy
 		@task = Task.find(params[:id])
 		@task.destroy
-		debugger
 		if @task.destroy
 			flash[:success] = "Task deleted"
 			redirect_to root_path
