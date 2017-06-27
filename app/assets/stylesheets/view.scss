@@ -188,7 +188,13 @@ div.dropdown-content {
 }
 
 div.intro-message {
-    margin-top: 15%;
+    margin-top: 2%;
+}
+
+div.intro-message-signed-out {
+    margin-top: 20%;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
 }
 
 div.task-option.dropdown:hover div.dropdown-content {
