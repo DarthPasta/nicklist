@@ -23,8 +23,16 @@ h6 {
 }
 
 a.navbar-brand {
-    color: black;
+    font-family: initial;
+    color: ghostwhite;
+    font-size: x-large;
 }
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 
 ul.navbar-nav.ml-auto {
     float: right;
@@ -39,7 +47,8 @@ a.nav-link {
 
 nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
     margin: 0;
-    background: floralwhite;
+    background: darkslategrey;
+    border-bottom: 3px black solid;
 }
 
 .intro-header {
@@ -52,7 +61,7 @@ nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
+    padding-top: 10%;
     padding-bottom: 20%;
 }
 
@@ -102,6 +111,7 @@ nav.navbar.fixed-top.navbar-toggleable-md.navbar-light.bg-faded {
 .content-section-a {
     padding: 50px 0;
     background-color: #f8f8f8;
+    margin-top: 10%;
 }
 
 .content-section-b {
