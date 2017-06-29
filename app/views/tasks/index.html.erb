@@ -77,7 +77,7 @@
 				<!-- form to create new task -->
 				<%= form_for @task, html: {autocomplete: "off" }, remote: true, action: "post", controller: "tasks" do |t| %>
 
-					<%= t.text_field :description, input_html: { :class => "createtask" }, placeholder: "Add a task.." %>
+					<%= t.text_field :description,placeholder: "Add a task.." %>
 
                     <%= button_tag(type: "submit", class: "btn btn-success") do %><i class="glyphicon glyphicon-plus"></i>
                     <% end %>
