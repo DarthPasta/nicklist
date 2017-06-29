@@ -1,3 +1,4 @@
+ <html>
  <!-- Navigation -->
     <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,9 +75,9 @@
 
 	      
 				<!-- form to create new task -->
-				<%= form_for @task, html: {autocomplete: "off" }, action: "post", controller: "tasks" do |t| %>
+				<%= form_for @task, html: {autocomplete: "off" }, remote: true, action: "post", controller: "tasks" do |t| %>
 
-					<%= t.text_field :description, placeholder: "Add a task.." %>
+					<%= t.text_field :description, input_html: { :class => "createtask" }, placeholder: "Add a task.." %>
 
                     <%= button_tag(type: "submit", class: "btn btn-success") do %><i class="glyphicon glyphicon-plus"></i>
                     <% end %>
@@ -86,12 +87,13 @@
 			</div>
 
             <div class="task-list-container">
+                <div class="append-task"></div>
 				<div class="task-list">
 				<!-- display the list of tasks -->
 				<% @tasks.each do |task| %>
 
                             
-        <div class="task-row">
+                    <div class="task-row">
                             <div class="task-option dropdown">
                                 <span><button type="button" class="btn btn-primary btn-sml">
                                 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
@@ -104,7 +106,7 @@
 
                     </div>
 
-				<ul class="task-items">
+				<ul class="task-items" id="test">
 
                     <li><%= task.description %></li>
 
@@ -180,5 +182,5 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
-
+</html>
 

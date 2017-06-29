@@ -1,0 +1,22 @@
+<div class="task-list">
+    <div class="task-row">
+                <div class="task-option dropdown">
+                    <span><button type="button" class="btn btn-primary btn-sml">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                    </button></span>
+                
+                    <div class="dropdown-content">
+                    <%= link_to 'Delete', delete_task_path(@task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
+                    <%= link_to 'Edit', edit_task_path(@task.id) %>
+                 </div>
+
+                </div>
+
+    	<ul class="task-items" id="test">
+
+            <li><%= @task.description %></li>
+
+    		<li>Created at: <%= @task.created_at.to_date %></li>
+    	</ul>   
+    </div> 
+</div>
