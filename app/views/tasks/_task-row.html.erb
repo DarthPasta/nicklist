@@ -6,7 +6,7 @@
                     </button></span>
                 
                     <div class="dropdown-content">
-                    <%= link_to 'Delete', delete_task_path(@task.id), data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
+                    <%= link_to 'Delete', delete_task_path(@task.id),remote: true, data: {:confirm => 'Are you sure?'} , :method => :delete, :action => :destroy %>
                     <%= link_to 'Edit', edit_task_path(@task.id) %>
                  </div>
 

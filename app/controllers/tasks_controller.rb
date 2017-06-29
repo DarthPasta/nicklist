@@ -4,6 +4,7 @@ before_action :authenticate_user!, :only => [:create]
 	def index 
 		@task = Task.new
 		@tasks = current_user.tasks.order(created_at: :desc) if current_user
+		@tasks = Task.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def new 
@@ -20,31 +21,23 @@ before_action :authenticate_user!, :only => [:create]
 		format.js 
 		end
 
-		if @task.save
-
-		 	
-		
-
-		 else
-		 	flash[:danger] = "Failed to create new task"
-		 	redirect_to root_path 
-		 end
 	end 
 
 	def destroy
+		respond_to do |format|
+		format.html {redirect_to root_path}
+		format.js
+		end
+
 		@task = Task.find(params[:id])
 		@task.destroy
-		if @task.destroy
-			flash[:success] = "Task deleted"
-			redirect_to root_path
-		else
-			flash[:danger] = "Task delete failed"
-			redirect_to root_path
-		end 
+
 	end
+
+
 
 	private 
 	def task_params
-		params.require(:task).permit(:description, :user_id)
+		params.require(:task).permit(:description, :user_id, :completed?)
 	end
 end
