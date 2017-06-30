@@ -3,8 +3,16 @@ before_action :authenticate_user!, :only => [:create]
 
 	def index 
 		@task = Task.new
-		@tasks = current_user.tasks.order(created_at: :desc) if current_user
-		@tasks = Task.paginate(:page => params[:page], :per_page => 10)
+
+		@tasks = current_user.tasks.reorder("created_at DESC").page(params[:page]).per_page(12)
+
+# 		@tasks = current_user.tasks if current_user
+
+# 		@tasks.order(created_at: :desc) if current_user
+
+
+# @photos = Photo.reorder("date DESC").page(params[:page]).per_page(12)
+		
 	end
 
 	def new 
