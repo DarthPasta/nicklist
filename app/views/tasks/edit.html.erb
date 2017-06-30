@@ -1,0 +1,7 @@
+<%= form_for @task, url: update_task_path(@task) do |f| %>
+
+<%= f.text_field :description %> 
+<%= f.submit 'Edit Form' %> 
+
+<% end %>
+

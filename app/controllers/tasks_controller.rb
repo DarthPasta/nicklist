@@ -34,10 +34,22 @@ before_action :authenticate_user!, :only => [:create]
 
 	end
 
+	def edit 
+		@task = Task.find(params[:id])
+	end
+
+	def update
+		@task = Task.find(params[:id])
+		@task.update_attributes(task_params)
+		redirect_to root_path
+	end
+
 
 
 	private 
 	def task_params
 		params.require(:task).permit(:description, :user_id, :completed?)
 	end
+
+
 end
