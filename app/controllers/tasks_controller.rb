@@ -4,7 +4,7 @@ before_action :authenticate_user!, :only => [:create]
 	def index 
 		@task = Task.new
 
-		@tasks = current_user.tasks.reorder("created_at DESC").page(params[:page]).per_page(12)
+		@tasks = current_user.tasks.reorder("created_at DESC").page(params[:page]).per_page(12) if current_user
 
 # 		@tasks = current_user.tasks if current_user
 
