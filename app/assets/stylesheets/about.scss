@@ -1,8 +1,6 @@
-div.col-md-10 {
-	margin-left: 7.5%;
-	margin-right: 7.5%;
+div.col-md-12 {
 	background: azure;
-	margin-bottom: 200px;
+	margin-bottom: 120px;
 }
 
 div.about-left {
@@ -12,6 +10,7 @@ div.about-left {
 	display: inline-block;
 	word-wrap: word-break;
 	font-size: 1.5em;
+	text-align: center;
 }
 
 div.about-left p {
