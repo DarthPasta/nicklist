@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
  root 'tasks#index'
 
+ get '/about' => "tasks#about", as: :about_page 
+
  patch '/tasks/:id' => "tasks#update", as: :update_task
  delete "/tasks/:id" => "tasks#destroy", as: :delete_task
 end

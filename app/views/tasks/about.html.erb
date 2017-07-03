@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 50%;
+        float: right;
+       }
+    </style>
+  </head>
+  <body>
+
+    <div class="col-md-10">
+    	<div class="about-left">
+	    	<p><span style="color:cadetblue; font-family:serif;">Contact:</span><br> liowj.nick@gmail.com</p>
+	    	<p><span style="color:cadetblue; font-family:serif;">H/P number:</span><br> 012-3191601</p>
+	    	<p><span style="color:cadetblue; font-family:serif;">Address:</span><br>  25, Jalan Radin 1, 57100 Kuala Lumpur, Malaysia</p>
+	    </div>
+
+    	<div class="about-right" id="map"></div>
+
+    </div>
+
+
+    <script>
+      function initMap() {
+        var uluru = {lat: 3.068411, lng: 101.685633};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHQ7_qYN2QF_Vy0SmN17-akr9sO6mBC28&callback=initMap">
+    </script>
+  </body>
+</html>
