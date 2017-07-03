@@ -1,5 +1,5 @@
 div.col-md-12 {
-	background: azure;
+	background: seagreen;
 	margin-bottom: 120px;
 }
 
@@ -15,8 +15,15 @@ div.about-left {
 
 div.about-left p {
 	font-family: initial;
+}
+
+img.about-logo {
+	height: 50px;
+	border-radius: 5px;
+	margin-top: 20px;
 
 }
+
 
 div.about-right {
 	float: right;
