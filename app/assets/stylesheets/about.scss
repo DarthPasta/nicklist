@@ -1,5 +1,6 @@
 div.col-md-12 {
-	background: seagreen;
+	background: image-url('about-background.jpg') no-repeat center center;
+	background-size: cover;
 	margin-bottom: 120px;
 }
 
@@ -11,6 +12,7 @@ div.about-left {
 	word-wrap: word-break;
 	font-size: 1.5em;
 	text-align: center;
+	color: antiquewhite;
 }
 
 div.about-left p {
