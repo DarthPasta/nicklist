@@ -39,7 +39,6 @@ before_action :authenticate_user!, :only => [:create]
 
 		@task = Task.find(params[:id])
 		@task.destroy
-
 	end
 
 	def edit 
