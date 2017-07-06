@@ -31,6 +31,8 @@ gem 'fog-aws'
 
 gem 'omniauth-facebook'
 
+gem 'simple_form'
+
 gem 'will_paginate', '~> 3.1.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -51,6 +53,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_girl_rails'
 end
 
 group :development do

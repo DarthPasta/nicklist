@@ -31,11 +31,11 @@
 
 	      
 				<!-- form to create new task -->
-				<%= form_for @task, html: {autocomplete: "off" }, remote: true, action: "post", controller: "tasks" do |t| %>
+				<%= simple_form_for @task, html: {autocomplete: "off" }, remote: true, action: "post", controller: "tasks" do |t| %>
 
-					<%= t.text_field :description,placeholder: "Add a task.." %>
+					<%= t.text_field :description, placeholder: "Add a task..", id: "test1" %>
 
-                    <%= button_tag(type: "submit", class: "btn btn-success") do %><i class="glyphicon glyphicon-plus"></i>
+                    <%= button_tag(type: "submit", class: "btn btn-success", id: "test2") do %><i class="glyphicon glyphicon-plus"></i>
                     <% end %>
 
 				<% end %>
